@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@import "react-quill/dist/quill.snow.css";
+
+/* @theme {
+  --primary: #00848c;
+  --accent: "#38bdf8";
+  --dark: "#0f172a";
+}
+ */
+
+/* raw CSS added to your global file or module */
+.banner-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner {
+  position: relative;
+  background-color: #fff;
+  height: 100%;
+  mask-image: radial-gradient(circle at right, transparent 520px, black 130px);
+  -webkit-mask-image: radial-gradient(
+    circle at right,
+    transparent 520px,
+    black 130px
+  );
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 10% 10%;
+  -webkit-mask-size: 100% 100%;
+  z-index: 10;
+}
+
+.gif-bg {
+  position: absolute;
+  top: 0;
+  right: -30%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  transform: rotate(-90deg);
+}
+/* Disable mask on small screens */
+@media (max-width: 768px) {
+  .banner-wrapper {
+    height: 400px;
+    padding: 2px;
+  }
+  .banner {
+    background-position: top center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .banner-wrapper {
+    height: 500px;
+    padding: 2px;
+  }
+  .banner {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    background-image: url("/banner2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+  }
+  .banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.65); /* semi-transparent white */
+    z-index: 1;
+    pointer-events: none;
+  }
+  .banner > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.group:hover .group-hover\:rotate-360 {
+  transform: rotate(360deg);
+  transition: transform 0.5s;
+}
+
+button {
+  cursor: pointer;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.animate-slideInLeft {
+  animation: slideInLeft 0.25s cubic-bezier(0.48, 0.1, 0.41, 0.92) both;
+}
+.animate-slideOutLeft {
+  animation: slideOutLeft 0.25s cubic-bezier(0.48, 0.1, 0.41, 0.92) both;
+}
