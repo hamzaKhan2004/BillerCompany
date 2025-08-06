@@ -18,7 +18,7 @@ import ContactUs from "../pages/ContactUs";
 import Spinner from "../components/Spinner"; // ⬅️ Add this at the top
 import AdminAllProducts from "../pages/Admin/AdminAllProducts";
 import ProductDetailPage from "../pages/ProductDetailPage";
-import AdminCustomers from "../pages/Admin/AdminCutomers";
+import AdminCustomers from "../pages/Admin/AdminCustomers";
 import AdminCustomerDetail from "../pages/Admin/AdminCustomerDetail";
 import AddToCart from "../pages/AddToCart";
 import AddBlog from "../pages/Admin/AddBlog";
